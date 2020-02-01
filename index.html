@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ramadan Countdown 2020-1441</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <link rel="stylesheet" href="style.css" /> 
+    <meta name="title" content="Ramadan 2020-1441 Countdown">
+    <meta name="description" content="Counting down the days to the most awaited month of every year">
+    <meta name="keywords" content="Ramadan, Islam, fasting, Quran, Koran, Shahr, sehri, iftar">
+    <meta property="og:site_name" content="Ramadan Countdown" />
+    <meta property="og:title" content="Ramadan 2020-1441 Countdown" />
+    <meta property="og:description" content="Counting down the days to the most awaited month of every year" />
+    <meta property="og:image" content="moon-and-minaret.jpg">
+</head>
+<body>
+    <div class="container"> 
+    <h2><span> Countdown to</span>Ramadan 2020-1441</h2> 
+        <div class="countdown"> 
+            <div id="day"></div>
+            <div id="hour"></div>
+            <div id="minute"></div>
+            <div id="second"></div>
+        </div>
+        <div class="credits">Photo by Emre Kuzu from Pexels</div>
+    </div>
+    <script>
+        var countDate = new Date('April 23, 2020 00:00:00').getTime(); 
+
+        function ramadan() {
+            var now = new Date().getTime()
+            gap = countDate - now; 
+
+            var second = 1000; 
+            var minute = second  * 60; 
+            var hour = minute * 60; 
+            var day = hour * 24; 
+
+            var d = Math.floor(gap/(day)); 
+            var h = Math.floor((gap % (day) / (hour)))
+            var m = Math.floor((gap % (hour) / (minute)))
+            var s = Math.floor((gap % (minute) / (second)))
+            document.getElementById('day').innerText = d; 
+            document.getElementById('hour').innerText = h; 
+            document.getElementById('minute').innerText = m; 
+            document.getElementById('second').innerText = s; 
+        }
+
+        setInterval(function() {
+            ramadan();
+        }, 1000)
+    </script> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114682718-2"></script>
+</body>
+</html>
